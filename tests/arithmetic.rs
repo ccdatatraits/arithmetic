@@ -1,5 +1,5 @@
+use arithmetic::{add, divide, multiply, subtract};
 use cucumber::{given, then, when, World};
-use arithmetic::{add, subtract, multiply, divide};
 
 #[derive(Debug, Default, World)]
 pub struct ArithWorld {
@@ -43,7 +43,7 @@ async fn then_result(world: &mut ArithWorld, expected: i32) {
     assert_eq!(world.result.unwrap(), expected);
 }
 
-#[then(regex = r"I should get an error \"([^\"]*)\"")]
+#[then(regex = r"I should get an error '([^']*)'")]
 async fn then_error(world: &mut ArithWorld, expected: String) {
     assert_eq!(world.error.as_ref().unwrap(), &expected);
 }

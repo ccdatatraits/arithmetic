@@ -23,4 +23,4 @@ Feature: Arithmetic Operations
   Scenario: Dividing by zero
     Given I have two numbers 10 and 0
     When I divide them
-    Then I should get an error "Division by zero"
+    Then I should get an error 'Division by zero'
